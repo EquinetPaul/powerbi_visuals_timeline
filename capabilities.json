@@ -1,14 +1,29 @@
 {
     "dataRoles": [
         {
-            "displayName": "Category Data",
-            "name": "category",
+            "displayName": "Date",
+            "name": "Date",
             "kind": "Grouping"
         },
         {
-            "displayName": "Measure Data",
-            "name": "measure",
-            "kind": "Measure"
+            "displayName": "Event",
+            "name": "Event",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "Description",
+            "name": "Description",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "Color",
+            "name": "Color",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "Symbol",
+            "name": "Symbol",
+            "kind": "Grouping"
         }
     ],
     "objects": {
@@ -42,7 +57,7 @@
                         "fill": {}
                     }
                 },
-                 "fontSize": {
+                "fontSize": {
                     "type": {
                         "formatting": {
                             "fontSize": true
@@ -54,20 +69,32 @@
     },
     "dataViewMappings": [
         {
-            "categorical": {
-                "categories": {
-                    "for": {
-                        "in": "category"
-                    },
-                    "dataReductionAlgorithm": {
-                        "top": {}
-                    }
-                },
-                "values": {
+            "table": {
+                "rows": {
                     "select": [
                         {
-                            "bind": {
-                                "to": "measure"
+                            "for": {
+                                "in": "Date"
+                            }
+                        },
+                        {
+                            "for": {
+                                "in": "Event"
+                            }
+                        },
+                        {
+                            "for": {
+                                "in": "Description"
+                            }
+                        },
+                        {
+                            "for": {
+                                "in": "Color"
+                            }
+                        },
+                        {
+                            "for": {
+                                "in": "Symbol"
                             }
                         }
                     ]
